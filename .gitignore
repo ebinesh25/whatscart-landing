@@ -1,1 +1,4 @@
 .superdesign/tmp/
+
+# Local Netlify folder
+.netlify
