@@ -31,6 +31,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>WhatsCart — The online store for WhatsApp-first businesses</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      // The app was previously hosted on this origin as a PWA. Remove its
+      // obsolete service worker and caches so it cannot replace this landing
+      // page with the old application shell on normal navigations.
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", async () => {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map((registration) => registration.unregister()));
+
+          if ("caches" in window) {
+            const cacheNames = await caches.keys();
+            await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+          }
+        });
+      }
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
