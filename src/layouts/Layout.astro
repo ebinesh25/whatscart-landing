@@ -1,23 +1,128 @@
+---
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WhatsCart gives WhatsApp-first businesses a branded online store, shareable collections, SEO-ready pages, structured orders, and analytics in five guided stages."
+    />
+    <meta name="theme-color" content="#3AAA34" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WhatsCart" />
+    <meta property="og:title" content="WhatsCart — The online store built for WhatsApp-first businesses" />
+    <meta
+      property="og:description"
+      content="Bring your WhatsApp, Instagram, and Facebook products into one searchable storefront with collections, structured orders, SEO, and analytics."
+    />
+    <meta property="og:url" content="https://whatscart.in/" />
+    <meta property="og:image" content="https://whatscart.in/assets/loops-by-ak-storefront.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WhatsCart — Your WhatsApp business deserves a place of its own" />
+    <meta
+      name="twitter:description"
+      content="A branded storefront, SEO foundation, and analytics—built around the way you already sell on WhatsApp."
+    />
+    <meta name="twitter:image" content="https://whatscart.in/assets/loops-by-ak-storefront.png" />
+    <link rel="icon" type="image/png" href="/assets/whatscart-app-icon.png" />
+    <script>
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {(c[a].q = c[a].q || []).push(arguments)};
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "xdj4az2q0d");
+    </script>
+    <link rel="canonical" href="https://whatscart.in/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>WhatsCart — The online store for WhatsApp-first businesses</title>
+    <script>
+      // The app was previously hosted on this origin as a PWA. Remove its
+      // obsolete service worker and caches so it cannot replace this landing
+      // page with the old application shell on normal navigations.
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", async () => {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map((registration) => registration.unregister()));
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+          if ("caches" in window) {
+            const cacheNames = await caches.keys();
+            await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+          }
+        });
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "WhatsCart",
+        "url": "https://whatscart.in/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "A mobile-first storefront and lightweight commerce workspace for businesses that sell primarily through WhatsApp.",
+        "offers": {
+          "@type": "Offer",
+          "price": "99",
+          "priceCurrency": "INR",
+          "description": "Three months free, then ₹99 per month."
+        },
+        "featureList": [
+          "Branded public storefront",
+          "Shareable product collections",
+          "WhatsApp-first structured orders",
+          "SEO and machine-readable product data",
+          "Storefront and traffic-source analytics"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does WhatsCart replace WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. WhatsCart complements WhatsApp. Customers browse and build an order in your public store, while you keep the direct customer conversation on WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is WhatsCart different from a WhatsApp Business catalog?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "WhatsApp Business catalogs are useful for in-app browsing and collections. WhatsCart adds a branded public website, shareable public collection pages, structured orders, technical SEO, and storefront analytics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the website, SEO foundation, and analytics included?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every WhatsCart store includes a public storefront, crawlable pages with canonical metadata, sitemaps and Schema.org data, plus analytics for visits, orders, products, customers, and traffic sources."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will WhatsCart guarantee a Google or AI ranking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No platform can guarantee rankings. WhatsCart provides the technical foundation that helps search engines and AI systems understand your store: public pages, metadata, sitemaps, rich share previews, and structured product data."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
