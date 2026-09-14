@@ -29,13 +29,12 @@
       content="A branded storefront, SEO foundation, and analytics—built around the way you already sell on WhatsApp."
     />
     <meta name="twitter:image" content="https://whatscart.in/assets/loops-by-ak-storefront.png" />
-    <link rel="icon" type="image/png" href="./assets/whatscart-app-icon.png" />
+    <link rel="icon" type="image/png" href="/assets/whatscart-app-icon.png" />
     <link rel="canonical" href="https://whatscart.in/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>WhatsCart — The online store for WhatsApp-first businesses</title>
-    <link rel="stylesheet" href="./styles.css" />
     <script>
       // The app was previously hosted on this origin as a PWA. Remove its
       // obsolete service worker and caches so it cannot replace this landing
@@ -123,7 +122,7 @@
     <header class="site-header">
       <nav class="nav container" aria-label="Primary navigation">
         <a class="brand" href="#top" aria-label="WhatsCart home">
-          <img class="brand-logo" src="./assets/whatscart-full-logo.png" alt="WhatsCart" />
+          <img class="brand-logo" src="/assets/whatscart-full-logo.png" alt="WhatsCart" width="168" height="36" />
         </a>
         <div class="nav-links">
           <a href="#why-whatscart">Why WhatsCart</a>
@@ -244,12 +243,12 @@
               </article>
             </div>
 
-            <div class="flow-arrow" aria-hidden="true"><span>Bring it together</span>→</div>
+            <div class="flow-arrow" aria-hidden="true"><span>Bring it together</span><span class="arrow-glyph">→</span></div>
 
             <div class="store-hub">
               <p class="map-label">Your one source of truth</p>
               <div class="store-hub-card">
-                <span class="hub-icon"><img src="./assets/whatscart-app-icon.png" alt="" /></span>
+                <span class="hub-icon"><img src="/assets/whatscart-app-icon.png" alt="WhatsCart" width="54" height="54" /></span>
                 <small>YOUR BRANDED STORE</small>
                 <strong>yourname.whatscart.in</strong>
                 <ul>
@@ -260,7 +259,7 @@
               </div>
             </div>
 
-            <div class="flow-arrow" aria-hidden="true"><span>Grow with clarity</span>→</div>
+            <div class="flow-arrow" aria-hidden="true"><span>Grow with clarity</span><span class="arrow-glyph">→</span></div>
 
             <div class="outcome-column">
               <p class="map-label">What you gain</p>
@@ -506,7 +505,7 @@
             aria-label="Open the live Loops_by_ak store"
           >
             <img
-              src="./assets/loops-by-ak-storefront.png"
+              src="/assets/loops-by-ak-storefront.png"
               alt="Screenshot of the live Loops_by_ak WhatsCart store"
               width="1440"
               height="900"
@@ -643,7 +642,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <a class="brand footer-brand" href="#top" aria-label="WhatsCart home">
-          <img class="brand-logo" src="./assets/whatscart-full-logo.png" alt="WhatsCart" />
+          <img class="brand-logo" src="/assets/whatscart-full-logo.png" alt="WhatsCart" width="168" height="36" />
         </a>
         <p>The online store built for businesses that already sell on WhatsApp.</p>
         <div>
@@ -918,9 +917,9 @@ button {
 .hero h1 {
   max-width: 650px;
   margin: 0;
-  font-size: clamp(46px, 6vw, 78px);
-  line-height: 1.03;
-  letter-spacing: -0.07em;
+  font-size: clamp(42px, 5.5vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 .hero h1 em,
@@ -932,10 +931,10 @@ button {
 
 .hero-lede {
   max-width: 550px;
-  margin: 27px 0 30px;
+  margin: 24px 0 28px;
   color: #596b60;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .hero-actions {
@@ -950,7 +949,7 @@ button {
   gap: 10px;
   margin: 0;
   color: #64756a;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -978,7 +977,7 @@ button {
 
 .hero-visual {
   position: relative;
-  padding: 25px;
+  padding: 24px 16px 36px;
 }
 
 .browser-card {
@@ -1000,11 +999,11 @@ button {
   display: flex;
   align-items: center;
   gap: 7px;
-  height: 37px;
+  height: 40px;
   padding: 0 16px;
   border-bottom: 1px solid #edf1ec;
   color: #829084;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .browser-bar > span {
@@ -1027,11 +1026,11 @@ button {
   padding: 4px 12px;
   border-radius: 99px;
   background: #f4f7f3;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .store-preview {
-  padding: 22px 28px 28px;
+  padding: 22px 26px 28px;
   background: #fbfdfb;
 }
 
@@ -1040,7 +1039,7 @@ button {
   align-items: center;
   justify-content: space-between;
   color: #88948b;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .preview-nav strong {
@@ -1056,62 +1055,64 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 190px;
-  margin-top: 22px;
-  padding: 27px;
+  min-height: 180px;
+  margin-top: 18px;
+  padding: 24px;
   border-radius: 16px;
   background: #e6f1e3;
 }
 
 .preview-banner small {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--green);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 }
 
 .preview-banner strong {
   display: block;
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1.15;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 .preview-banner button {
-  margin-top: 16px;
-  padding: 9px 13px;
+  margin-top: 14px;
+  padding: 8px 14px;
   border: 0;
-  border-radius: 7px;
+  border-radius: 8px;
   color: var(--white);
   background: var(--green);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
+  cursor: pointer;
 }
 
 .banner-orb {
   display: grid;
   place-items: center;
-  width: 112px;
-  height: 112px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   color: var(--white);
   background: #80b97b;
-  font-size: 50px;
+  font-size: 44px;
 }
 
 .preview-heading {
   display: flex;
   justify-content: space-between;
-  margin: 24px 0 12px;
-  font-size: 12px;
+  align-items: center;
+  margin: 20px 0 12px;
+  font-size: 13px;
   font-weight: 800;
 }
 
 .preview-heading small {
   color: var(--green);
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .product-row {
@@ -1123,22 +1124,23 @@ button {
 .product-tile strong,
 .product-tile small {
   display: block;
-  margin-top: 7px;
-  font-size: 9px;
+  margin-top: 5px;
+  font-size: 11px;
 }
 
 .product-tile small {
   margin-top: 2px;
   color: #86948a;
+  font-size: 10px;
 }
 
 .tile-art {
   display: grid;
   place-items: center;
-  height: 95px;
+  height: 88px;
   border-radius: 10px;
   color: var(--white);
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .art-one {
@@ -1163,23 +1165,29 @@ button {
   border-radius: 15px;
   background: var(--white);
   box-shadow: 0 15px 30px rgba(40, 75, 41, 0.13);
+  z-index: 2;
 }
 
 .floating-order {
-  bottom: 20px;
-  left: -6px;
-  padding: 13px 15px;
+  bottom: 8px;
+  left: -12px;
+  padding: 12px 16px;
 }
 
 .floating-order small,
 .floating-order b {
   display: block;
-  font-size: 9px;
 }
 
 .floating-order small {
   color: #829187;
   letter-spacing: 0.08em;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.floating-order b {
+  font-size: 13px;
 }
 
 .floating-order strong {
@@ -1189,17 +1197,17 @@ button {
 .whatsapp-icon {
   display: grid;
   place-items: center;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   color: var(--white);
   background: #58b95c;
-  font-size: 23px;
+  font-size: 22px;
 }
 
 .floating-growth {
-  top: -3px;
-  right: -8px;
+  top: 4px;
+  right: -10px;
   padding: 12px 16px;
   color: var(--white);
   background: var(--ink);
@@ -1213,18 +1221,19 @@ button {
   border-radius: 50%;
   color: var(--white);
   background: var(--green);
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .floating-growth small {
   color: #a1aea4;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .floating-growth b {
   color: var(--white);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0;
 }
 
@@ -2937,26 +2946,5 @@ button {
 }
 
   </style>
-  <script>
-	// Retire the PWA service worker that previously controlled whatscart.in.
-// Existing installations request this URL when checking for an update.
-self.addEventListener("install", () => {
-  self.skipWaiting();
-});
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    (async () => {
-      const cacheNames = await caches.keys();
-      await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
-      await self.clients.claim();
-
-      const clients = await self.clients.matchAll({ type: "window" });
-      await self.registration.unregister();
-      await Promise.all(clients.map((client) => client.navigate(client.url)));
-    })(),
-  );
-});
-  </script>
 </html>
 
