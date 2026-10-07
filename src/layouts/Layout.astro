@@ -16,6 +16,7 @@ const interLatinCss = `@font-face{font-family:"Inter Variable";font-style:normal
       content="WhatsCart gives WhatsApp-first businesses a branded online store, shareable collections, SEO-ready pages, structured orders, and analytics in five guided stages."
     />
     <meta name="theme-color" content="#3AAA34" />
+    <slot name="head" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="WhatsCart" />
     <meta property="og:title" content="WhatsCart — The online store built for WhatsApp-first businesses" />
@@ -42,7 +43,7 @@ const interLatinCss = `@font-face{font-family:"Inter Variable";font-style:normal
     </script>
     <link rel="canonical" href="https://whatscart.in/" />
     <link rel="preload" href={interLatinWoff2} as="font" type="font/woff2" crossorigin />
-    <title>WhatsCart — The online store for WhatsApp-first businesses</title>
+    <slot name="title"><title>WhatsCart — The online store for WhatsApp-first businesses</title></slot>
     <script>
       // The app was previously hosted on this origin as a PWA. Remove its
       // obsolete service worker and caches so it cannot replace this landing

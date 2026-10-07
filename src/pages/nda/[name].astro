@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Astro's current site is statically generated. Add another slug here when
+// preparing an NDA for a different person.
+export function getStaticPaths() {
+  return [{ params: { name: 'issac-surya' } }];
+}
+
+const { name } = Astro.params;
+const invitee = name === 'issac-surya' ? 'Issac Surya' : 'Invitee';
+const today = new Date().toLocaleDateString('en-IN', {
+  day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata',
+});
+---
+
+<Layout>
+  <title slot="title">Confidentiality Agreement — WhatsCart</title>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <main class="nda-shell">
+    <header class="nda-topbar">
+      <a class="wordmark" href="/" aria-label="WhatsCart home"><span class="mark">W</span> WhatsCart</a>
+      <span class="private-label"><span></span> Private document</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">FOUNDER ONBOARDING · CONFIDENTIAL</p>
+      <h1>Confidentiality<br />&amp; Non-Disclosure Agreement</h1>
+      <p class="intro-copy">A clear agreement for sharing WhatsCart’s business, product, customer and operational information during the initial collaboration.</p>
+      <div class="meta-row"><span>Prepared for <strong>{invitee}</strong></span><span>Proposed date <strong>{today}</strong></span></div>
+    </section>
+
+    <div class="draft-note"><strong>Before signing:</strong> Confirm the exact legal name and address of the business/entity operating WhatsCart, the effective date, and the parties’ details. This draft is not a substitute for advice from an Indian lawyer.</div>
+
+    <article class="document" id="agreement">
+      <div class="doc-heading"><span class="doc-kicker">WHATSCART · INDIA</span><span class="doc-number">CONFIDENTIALITY AGREEMENT</span></div>
+      <h2>Mutual Non-Disclosure Agreement</h2>
+      <p class="opening">This Agreement is made on <input class="inline-input" aria-label="Effective date" value={today} /> (the “Effective Date”) by and between:</p>
+      <ol class="parties">
+        <li><strong>WhatsCart</strong>, the business/venture operated by <strong>E. Binesh A</strong> and <strong>Bhuvaneshwari K</strong>, acting through its lawful contracting entity (legal name and registered/principal address to be completed before signing), referred to as “WhatsCart”; and</li>
+        <li><strong>{invitee}</strong>, whose address is <input class="inline-input wide" aria-label="Issac Surya address" placeholder="Full residential address" />, referred to as the “Recipient”.</li>
+      </ol>
+      <p>WhatsCart and the Recipient are each a “Party” and together the “Parties”. In this Agreement, the Party disclosing information is the “Disclosing Party” and the Party receiving it is the “Receiving Party”.</p>
+
+      <section class="clause"><h3>1. Purpose and proposed responsibilities</h3><p>The Parties wish to discuss and/or work together on the marketing, launch and early operations of the WhatsCart app and business (the “Purpose”). The Recipient may assist with marketing and promotion, initial setup activities, supporting Udyam registration, gathering client requirements and feedback, and related tasks agreed with the founders. This description does not itself appoint the Recipient as a director, partner, employee, agent or authorised representative.</p></section>
+      <section class="clause"><h3>2. Confidential Information</h3><p>“Confidential Information” means non-public information disclosed by or for a Party in any form, including product plans, software, source code, designs, credentials, pricing, financial information, marketing plans, business methods, client/prospect requirements, customer and supplier details, and discussions or documents about the Purpose. It includes information that a reasonable person would understand to be confidential from its nature or the circumstances of disclosure.</p><p>It does not include information the Receiving Party can show: (a) is public through no breach of this Agreement; (b) was lawfully known without a confidentiality duty before disclosure; (c) was independently developed without use of the Confidential Information; or (d) was lawfully received from a third party without a confidentiality duty.</p></section>
+      <section class="clause"><h3>3. Recipient’s obligations</h3><p>The Receiving Party will: (a) use Confidential Information only for the Purpose; (b) protect it with reasonable care and at least the same care used for its own similarly sensitive information; (c) share it only with people who need it for the Purpose and are bound to protect it; (d) not copy, publish, exploit, reverse engineer or disclose it except as necessary for the Purpose or with prior written consent; and (e) promptly notify the Disclosing Party of any suspected unauthorised access, use or disclosure.</p></section>
+      <section class="clause"><h3>4. Permitted and legally required disclosure</h3><p>A Receiving Party may disclose information to the limited extent required by law or a competent authority, provided it gives advance notice where legally permitted and reasonably cooperates, at the Disclosing Party’s expense, with efforts to seek confidential treatment.</p></section>
+      <section class="clause"><h3>5. Care of information; return or deletion</h3><p>On written request or when discussions end, the Receiving Party will promptly return or securely delete Confidential Information under its control, including copies, and confirm deletion on request. A copy may be retained only where required by law or routine secure backups, and remains protected under this Agreement.</p></section>
+      <section class="clause"><h3>6. No equity, shares or ownership commitment</h3><p><strong>No shares, stock, ownership interest, partnership interest or equity in WhatsCart is granted or promised by this Agreement or by the proposed collaboration.</strong> After an initial six-month period, the founders may review the Recipient’s contribution, impact and the business’s needs. Any decision about equity or another ownership interest is entirely subject to a separate written agreement, approved by the relevant parties and signed by them. No equity or other commitment arises unless and until that separate agreement is executed. This clause does not promise a role or compensation; those matters, if any, must be agreed separately in writing.</p></section>
+      <section class="clause"><h3>7. No transfer of rights or authority</h3><p>All Confidential Information remains the property of the Disclosing Party or its respective owner. No licence or other intellectual-property right is granted except the limited right to use information for the Purpose. The Recipient must not make commitments, incur expenses, represent WhatsCart, access systems, or submit filings on its behalf unless specifically authorised in writing. Any ownership or assignment of work product will be addressed separately in writing.</p></section>
+      <section class="clause"><h3>8. Term and survival</h3><p>This Agreement starts on the Effective Date and continues until either Party ends the discussions or collaboration by written notice. The confidentiality and use restrictions continue for three years after the relevant disclosure; information qualifying as a trade secret remains protected for as long as it remains a trade secret under applicable law.</p></section>
+      <section class="clause"><h3>9. No warranty; remedies</h3><p>Confidential Information is provided for the Purpose without a promise that it is complete or error-free. A Party may seek remedies available under applicable law for a breach of this Agreement. Nothing here limits rights that cannot lawfully be limited.</p></section>
+      <section class="clause"><h3>10. General</h3><p>This Agreement is the complete agreement about confidentiality for the Purpose and may be changed only in writing signed by both Parties. If a provision is unenforceable, the remaining provisions continue to the extent permitted by law. This Agreement is governed by the laws of India. Courts having jurisdiction at <input class="inline-input" aria-label="City and state for jurisdiction" placeholder="City, State" /> will have jurisdiction, subject to applicable law.</p><p>Signatures may be exchanged electronically or in counterparts, subject to applicable law. Each signatory confirms they are authorised and have had an opportunity to read and seek advice on this Agreement.</p></section>
+
+      <div class="signature-grid">
+        <div class="signature-block"><h3>For WhatsCart</h3><p>Legal entity: <input class="line-input" aria-label="WhatsCart legal entity name" placeholder="Complete before signing" /></p><p>By: E. Binesh A / Bhuvaneshwari K</p><p>Signature: __________________________</p><p>Date: ______________________________</p></div>
+        <div class="signature-block recipient-signature"><h3>Recipient</h3><p>Name: <strong>{invitee}</strong></p><div class="signature-display"><img id="signature-image" alt="Recipient signature" hidden /><span id="signature-placeholder">Draw signature below</span></div><p>Signed electronically by <strong id="printed-name">{invitee}</strong></p><p>Date: <strong id="signed-date">Not signed</strong></p></div>
+      </div>
+      <p class="witness">Witness (optional): ______________________________ &nbsp; Name: ______________________________</p>
+    </article>
+
+    <section class="sign-panel" aria-labelledby="sign-title">
+      <div><p class="eyebrow">YOUR SIGNATURE</p><h2 id="sign-title">Review and sign</h2><p class="sign-hint">Your signature stays in this browser. It is not uploaded or emailed.</p></div>
+      <label class="field-label" for="signer-name">Type your full legal name</label>
+      <input id="signer-name" class="name-field" value={invitee} autocomplete="name" />
+      <div class="canvas-wrap"><canvas id="signature-pad" aria-label="Draw your signature here"></canvas><span class="canvas-caption">Draw with your finger, mouse or trackpad</span></div>
+      <div class="sign-actions"><button type="button" class="clear-button" id="clear-signature">Clear signature</button><label class="consent"><input id="confirm-signature" type="checkbox" /><span>I have read this Agreement, agree to its terms, and intend to sign it electronically.</span></label><button type="button" class="sign-button" id="sign-button" disabled>Sign &amp; print / save PDF</button></div>
+      <p class="sign-footnote">Signing does not send a copy to WhatsCart. After signing, use your browser’s print dialog to save a PDF and share it with the founders. Keep a copy for your records.</p>
+    </section>
+    <footer class="nda-footer"><a href="/">← Back to WhatsCart</a><span>Private onboarding document · WhatsCart</span></footer>
+  </main>
+
+  <style>
+    :global(body){background:#f4f7f3;color:#18231b}.nda-shell{max-width:900px;margin:auto;padding:0 26px 40px}.nda-topbar{display:flex;justify-content:space-between;align-items:center;height:76px;border-bottom:1px solid #e1e9df}.wordmark{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.04em;font-size:20px}.mark{display:grid;place-items:center;width:30px;height:30px;background:#2c9733;color:white;border-radius:9px;font-size:17px}.private-label{display:flex;align-items:center;gap:8px;color:#69776d;font-size:12px;font-weight:700}.private-label span{width:7px;height:7px;border-radius:50%;background:#40a54a}.intro{padding:55px 0 30px}.eyebrow{font-size:10px;letter-spacing:.17em;font-weight:850;color:#328d36;margin:0 0 13px}.intro h1{font-size:clamp(34px,6vw,55px);line-height:1.03;letter-spacing:-.055em;margin:0;max-width:680px}.intro-copy{color:#68766d;max-width:590px;line-height:1.7;margin:18px 0}.meta-row{display:flex;gap:28px;flex-wrap:wrap;font-size:12px;color:#68766d;margin-top:24px}.meta-row strong{color:#1e2b21;margin-left:4px}.draft-note{background:#fff8e8;border:1px solid #f0dfb4;border-radius:12px;padding:15px 18px;font-size:12px;line-height:1.65;color:#62542c;margin:0 0 20px}.document{background:white;border:1px solid #e3e9e2;border-radius:18px;padding:clamp(24px,5vw,56px);box-shadow:0 18px 60px #1b35140b;font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:1.75;color:#2c352e}.doc-heading{display:flex;justify-content:space-between;gap:10px;color:#829086;font:700 9px/1.4 Inter, sans-serif;letter-spacing:.12em;padding-bottom:14px;border-bottom:1px solid #e8ede7}.document h2{font:750 25px/1.25 Inter,sans-serif;letter-spacing:-.04em;color:#17241b;margin:24px 0 18px}.document p{margin:10px 0}.opening{margin-top:0!important}.parties{padding-left:22px}.parties li{padding-left:5px;margin:10px 0}.clause{margin:24px 0}.clause h3,.signature-block h3{font:800 13px/1.4 Inter,sans-serif;color:#233d29;margin:0 0 7px}.clause p{margin:7px 0}.inline-input,.line-input{font:inherit;color:inherit;background:#fbfcfa;border:0;border-bottom:1px solid #aab7aa;padding:2px 5px;min-width:145px;border-radius:2px}.inline-input.wide{min-width:min(330px,90%)}.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:42px;padding-top:22px;border-top:1px solid #e1e9df}.signature-block{min-width:0}.signature-block p{font-size:12px}.line-input{font-size:12px;min-width:140px;max-width:100%}.signature-display{height:66px;border-bottom:1px solid #aab7aa;display:flex;align-items:center}.signature-display img{max-height:62px;max-width:100%;object-fit:contain}.signature-display span{font:italic 12px Inter,sans-serif;color:#a0aaa1}.witness{margin-top:28px!important;font-size:11px;color:#68766d}.sign-panel{background:#fff;border:1px solid #e3e9e2;border-radius:18px;margin-top:18px;padding:clamp(22px,4vw,38px);box-shadow:0 14px 45px #1b35140a}.sign-panel h2{font-size:24px;letter-spacing:-.04em;margin:0}.sign-hint,.sign-footnote{font-size:12px;color:#748077;line-height:1.6}.field-label{display:block;font-size:12px;font-weight:750;margin:22px 0 7px}.name-field{width:100%;height:45px;border:1px solid #dfe7de;border-radius:10px;padding:0 13px;font:inherit;font-size:14px}.canvas-wrap{position:relative;border:1px dashed #b8c9b7;background:#fbfdfb;border-radius:12px;margin-top:14px;height:150px;overflow:hidden;touch-action:none}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.canvas-caption{position:absolute;bottom:9px;right:12px;color:#9aa59b;font-size:10px;pointer-events:none}.sign-actions{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:16px;margin-top:16px}.clear-button{border:0;background:none;color:#4f6353;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:12px}.consent{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#4d5d50;line-height:1.45}.consent input{accent-color:#318e35;margin-top:2px}.sign-button{grid-column:1/-1;justify-self:start;border:0;border-radius:999px;padding:13px 20px;color:white;background:#319638;font:750 13px Inter,sans-serif;cursor:pointer}.sign-button:disabled{opacity:.4;cursor:not-allowed}.sign-footnote{margin:14px 0 0}.nda-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:24px 4px;font-size:11px;color:#7a867d}.nda-footer a{font-weight:750;color:#3e7542}
+    @media(max-width:600px){.nda-shell{padding:0 15px 28px}.intro{padding-top:39px}.meta-row{gap:10px;flex-direction:column}.doc-heading{flex-direction:column}.signature-grid{grid-template-columns:1fr}.sign-actions{grid-template-columns:1fr}.clear-button{justify-self:start}.consent{grid-row:2}.sign-button{grid-column:1}.document{font-size:13px;padding:23px 20px}}
+    @media print{@page{size:A4;margin:16mm}.nda-shell{max-width:none;padding:0}.nda-topbar,.intro,.draft-note,.sign-panel,.nda-footer{display:none!important}.document{padding:0;border:0;box-shadow:none;border-radius:0;font-size:11pt}.document h2{font-size:20pt}.clause{break-inside:avoid}.signature-grid{break-inside:avoid}.inline-input,.line-input{border:0;border-bottom:1px solid #555;background:transparent;padding:0;color:#111}.document{color:#111}}
+  </style>
+
+  <script>
+    const canvas = document.querySelector<HTMLCanvasElement>('#signature-pad')!;
+    const context = canvas.getContext('2d')!;
+    const clearButton = document.querySelector<HTMLButtonElement>('#clear-signature')!;
+    const signButton = document.querySelector<HTMLButtonElement>('#sign-button')!;
+    const nameInput = document.querySelector<HTMLInputElement>('#signer-name')!;
+    const consent = document.querySelector<HTMLInputElement>('#confirm-signature')!;
+    const image = document.querySelector<HTMLImageElement>('#signature-image')!;
+    const placeholder = document.querySelector<HTMLElement>('#signature-placeholder')!;
+    const signedDate = document.querySelector<HTMLElement>('#signed-date')!;
+    const printedName = document.querySelector<HTMLElement>('#printed-name')!;
+    let drawing = false;
+    let hasInk = false;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const scale = window.devicePixelRatio || 1;
+      const old = hasInk ? canvas.toDataURL() : '';
+      canvas.width = rect.width * scale;
+      canvas.height = rect.height * scale;
+      context.setTransform(scale, 0, 0, scale, 0, 0);
+      context.strokeStyle = '#183e21';
+      context.lineWidth = 2.4;
+      context.lineCap = 'round';
+      context.lineJoin = 'round';
+      if (old) { const img = new Image(); img.onload = () => context.drawImage(img, 0, 0, rect.width, rect.height); img.src = old; }
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    function point(event: PointerEvent) { const rect = canvas.getBoundingClientRect(); return { x: event.clientX - rect.left, y: event.clientY - rect.top }; }
+    canvas.addEventListener('pointerdown', (event) => { drawing = true; canvas.setPointerCapture(event.pointerId); const p = point(event); context.beginPath(); context.moveTo(p.x, p.y); context.lineTo(p.x + 0.1, p.y + 0.1); context.stroke(); hasInk = true; signButton.disabled = !(hasInk && consent.checked && nameInput.value.trim()); });
+    canvas.addEventListener('pointermove', (event) => { if (!drawing) return; const p = point(event); context.lineTo(p.x, p.y); context.stroke(); });
+    const stopDrawing = () => { drawing = false; };
+    canvas.addEventListener('pointerup', stopDrawing);
+    canvas.addEventListener('pointercancel', stopDrawing);
+    clearButton.addEventListener('click', () => { context.clearRect(0, 0, canvas.width, canvas.height); hasInk = false; signButton.disabled = true; image.hidden = true; placeholder.hidden = false; signedDate.textContent = 'Not signed'; });
+    function updateButton() { signButton.disabled = !(hasInk && consent.checked && nameInput.value.trim().length > 0); }
+    consent.addEventListener('change', updateButton);
+    nameInput.addEventListener('input', updateButton);
+    signButton.addEventListener('click', () => {
+      if (!hasInk || !consent.checked || !nameInput.value.trim()) return;
+      image.src = canvas.toDataURL('image/png');
+      image.hidden = false;
+      placeholder.hidden = true;
+      printedName.textContent = nameInput.value.trim();
+      signedDate.textContent = new Intl.DateTimeFormat('en-IN', { dateStyle: 'long', timeZone: 'Asia/Kolkata' }).format(new Date());
+      window.print();
+    });
+  </script>
+</Layout>
