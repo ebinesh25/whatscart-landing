@@ -26,17 +26,23 @@ const agreementDate = '7 October 2026';
       <h1>Confidentiality<br />&amp; Non-Disclosure Agreement</h1>
       <p class="intro-copy">A clear agreement for sharing Whatscart’s business, product, customer and operational information during the initial collaboration.</p>
       <div class="meta-row"><span>Prepared for <strong>{invitee}</strong></span><span>Agreement date <strong>{agreementDate}</strong></span></div>
+      <nav class="signer-picker" aria-label="Choose your signing link">
+        <span>Signer links</span>
+        <a href="?signing=ebinesh">EBINESH A</a>
+        <a href="?signing=bhuvaneshwari">BHUVANESHWARI K</a>
+        <a href="?signing=issac">{invitee}</a>
+      </nav>
     </section>
 
-    <div class="draft-note"><strong>Before signing:</strong> Fill in each person’s full address. EBINESH A and BHUVANESHWARI K must personally sign their own lines before sending this agreement to {invitee}; their signature lines and signing dates are intentionally blank. This draft is not a substitute for advice from an Indian lawyer.</div>
+    <div class="draft-note"><strong>Before signing:</strong> Open your personal signer link, enter your own full address, and sign your own line. Each signer’s browser prepares a separate copy; the team must collect and combine all three signed copies. This draft is not a substitute for advice from an Indian lawyer.</div>
 
     <article class="document" id="agreement">
       <div class="doc-heading"><span class="doc-kicker">Whatscart · India</span><span class="doc-number">CONFIDENTIALITY AGREEMENT</span></div>
       <h2>Mutual Non-Disclosure Agreement</h2>
       <p class="opening">This Agreement is dated <strong>{agreementDate}</strong> (the “Effective Date”) and is made by and between:</p>
       <ol class="parties">
-        <li><strong>EBINESH A</strong>, residing at <input class="inline-input wide" aria-label="EBINESH A address" placeholder="Full address" />, and <strong>BHUVANESHWARI K</strong>, residing at <input class="inline-input wide" aria-label="BHUVANESHWARI K address" placeholder="Full address" /> (together, the “Founders”), each signing in their individual capacity in connection with the Whatscart venture; and</li>
-        <li><strong>{invitee}</strong>, whose address is <input class="inline-input wide" aria-label="Issac Surya address" placeholder="Full residential address" />, referred to as the “Recipient”.</li>
+        <li><strong>EBINESH A</strong><span class="address-entry" data-address-for="ebinesh"> (address: <input class="inline-input wide" aria-label="EBINESH A address" placeholder="Enter your full address" />)</span><span class="address-pending" data-address-pending="ebinesh"> (address to be entered by signer)</span>, and <strong>BHUVANESHWARI K</strong><span class="address-entry" data-address-for="bhuvaneshwari"> (address: <input class="inline-input wide" aria-label="BHUVANESHWARI K address" placeholder="Enter your full address" />)</span><span class="address-pending" data-address-pending="bhuvaneshwari"> (address to be entered by signer)</span> (together, the “Founders”), each signing in their individual capacity in connection with the Whatscart venture; and</li>
+        <li><strong>{invitee}</strong><span class="address-entry" data-address-for="issac"> (address: <input class="inline-input wide" aria-label="Issac Surya address" placeholder="Enter your full residential address" />)</span><span class="address-pending" data-address-pending="issac"> (address to be entered by signer)</span>, referred to as the “Recipient”.</li>
       </ol>
       <p>Each Founder and the Recipient is a “Party”, and together they are the “Parties”. In this Agreement, the Party disclosing information is the “Disclosing Party” and the Party receiving it is the “Receiving Party”. “Whatscart” refers to the name used for the venture; the contracting parties are the named individuals, not a separate registered entity.</p>
 
@@ -52,20 +58,22 @@ const agreementDate = '7 October 2026';
       <section class="clause"><h3>10. General</h3><p>This Agreement is the complete agreement about confidentiality for the Purpose and may be changed only in writing signed by both Parties. If a provision is unenforceable, the remaining provisions continue to the extent permitted by law. This Agreement is governed by the laws of India. Courts having jurisdiction at <input class="inline-input" aria-label="City and state for jurisdiction" placeholder="City, State" /> will have jurisdiction, subject to applicable law.</p><p>Signatures may be exchanged electronically or in counterparts, subject to applicable law. Each signatory confirms they are authorised and have had an opportunity to read and seek advice on this Agreement.</p></section>
 
       <div class="signature-grid">
-        <div class="signature-block"><h3>Founder / Individual Party</h3><p>Name: <strong>EBINESH A</strong></p><p>Signature: __________________________</p><p>Date signed: ________________________</p></div>
-        <div class="signature-block"><h3>Founder / Individual Party</h3><p>Name: <strong>BHUVANESHWARI K</strong></p><p>Signature: __________________________</p><p>Date signed: ________________________</p></div>
-        <div class="signature-block recipient-signature"><h3>Recipient</h3><p>Name: <strong>{invitee}</strong></p><div class="signature-display"><img id="signature-image" alt="Recipient signature" hidden /><span id="signature-placeholder">Draw signature below</span></div><p>Signed electronically by <strong id="printed-name">{invitee}</strong></p><p>Date: <strong id="signed-date">Not signed</strong></p></div>
+        <div class="signature-block" data-signature-block="ebinesh"><h3>Founder / Individual Party</h3><p>Name: <strong>EBINESH A</strong></p><div class="signature-display"><img data-signature-image="ebinesh" alt="EBINESH A signature" hidden /><span data-signature-placeholder="ebinesh">Awaiting signature</span></div><p>Signed electronically by <strong data-signed-by="ebinesh">EBINESH A</strong></p><p>Date: <strong data-signed-date="ebinesh">Not signed</strong></p></div>
+        <div class="signature-block" data-signature-block="bhuvaneshwari"><h3>Founder / Individual Party</h3><p>Name: <strong>BHUVANESHWARI K</strong></p><div class="signature-display"><img data-signature-image="bhuvaneshwari" alt="BHUVANESHWARI K signature" hidden /><span data-signature-placeholder="bhuvaneshwari">Awaiting signature</span></div><p>Signed electronically by <strong data-signed-by="bhuvaneshwari">BHUVANESHWARI K</strong></p><p>Date: <strong data-signed-date="bhuvaneshwari">Not signed</strong></p></div>
+        <div class="signature-block recipient-signature" data-signature-block="issac"><h3>Recipient</h3><p>Name: <strong>{invitee}</strong></p><div class="signature-display"><img data-signature-image="issac" alt="Issac Surya signature" hidden /><span data-signature-placeholder="issac">Awaiting signature</span></div><p>Signed electronically by <strong data-signed-by="issac">{invitee}</strong></p><p>Date: <strong data-signed-date="issac">Not signed</strong></p></div>
       </div>
       <p class="witness">Witness (optional): ______________________________ &nbsp; Name: ______________________________</p>
     </article>
 
     <section class="sign-panel" aria-labelledby="sign-title">
-      <div><p class="eyebrow">YOUR SIGNATURE</p><h2 id="sign-title">Review and sign</h2><p class="sign-hint">Preview the complete agreement before confirming and printing.</p></div>
-      <label class="field-label" for="signer-name">Type your full legal name</label>
-      <input id="signer-name" class="name-field" value={invitee} autocomplete="name" />
-      <div class="canvas-wrap"><canvas id="signature-pad" aria-label="Draw your signature here"></canvas><span class="canvas-caption">Draw with your finger, mouse or trackpad</span></div>
-      <div class="sign-actions"><button type="button" class="clear-button" id="clear-signature">Clear signature</button><label class="consent"><input id="confirm-signature" type="checkbox" /><span>I have read this Agreement and intend to sign it electronically if I confirm the preview.</span></label><button type="button" class="sign-button" id="sign-button" disabled>Preview agreement</button></div>
-      <p class="sign-footnote">The signature stays in this browser. The next step shows a complete preview for your review.</p>
+      <div><p class="eyebrow">SIGNER WORKSPACE</p><h2 id="sign-title">Choose your signing link</h2><p class="sign-hint" id="signer-hint">Choose your name above. The page will show your address and signature fields.</p></div>
+      <div class="signer-form" id="signer-form" hidden>
+        <label class="field-label" for="signer-name">Confirm your full legal name</label>
+        <input id="signer-name" class="name-field" autocomplete="name" />
+        <div class="canvas-wrap"><canvas id="signature-pad" aria-label="Draw your signature here"></canvas><span class="canvas-caption">Draw with your finger, mouse or trackpad</span></div>
+        <div class="sign-actions"><button type="button" class="clear-button" id="clear-signature">Clear signature</button><label class="consent"><input id="confirm-signature" type="checkbox" /><span>I have read this Agreement and intend to sign it electronically if I confirm the preview.</span></label><button type="button" class="sign-button" id="sign-button" disabled>Preview agreement</button></div>
+        <p class="sign-footnote">Your signature stays in this browser. The preview includes your signature; the other two signature blocks remain unsigned until those people sign their own links.</p>
+      </div>
     </section>
     <dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title">
       <div class="preview-toolbar"><strong id="preview-title">Review your signed agreement</strong><button type="button" class="clear-button" id="close-preview">Close preview</button></div>
@@ -74,8 +82,8 @@ const agreementDate = '7 October 2026';
     </dialog>
     <section class="final-panel" id="final-panel" aria-live="polite" hidden>
       <h2>Agreement confirmed</h2>
-      <p>Your print dialog opened so you can save a signed PDF. To send the copy to the team, attach that PDF to the prepared email.</p>
-      <a class="sign-button email-button" href="mailto:team@whatscart.in?subject=Signed%20Whatscart%20NDA%20%E2%80%94%20Issac%20Surya&amp;body=Hello%20Whatscart%20team%2C%0A%0APlease%20find%20my%20signed%20NDA%20attached.%0A%0ARegards%2C%0AIssac%20Surya">Email signed copy to team@whatscart.in</a>
+      <p>Your print dialog opened so you can save your signed copy. Attach that PDF to the prepared email. The other two signers’ signatures will not be included in this copy.</p>
+      <a class="sign-button email-button" id="email-copy" href="mailto:team@whatscart.in">Email signed copy to team@whatscart.in</a>
       <p class="sign-footnote">Manual email is used for now. Your browser cannot attach the PDF automatically; attach the saved file before sending.</p>
     </section>
     <footer class="nda-footer"><a href="/">← Back to Whatscart</a><span>Private onboarding document · Whatscart</span></footer>
@@ -83,13 +91,29 @@ const agreementDate = '7 October 2026';
 
   <style>
     :global(body){background:#f4f7f3;color:#18231b}.nda-shell{max-width:900px;margin:auto;padding:0 26px 40px}.nda-topbar{display:flex;justify-content:space-between;align-items:center;height:76px;border-bottom:1px solid #e1e9df}.wordmark{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.04em;font-size:20px}.mark{display:grid;place-items:center;width:30px;height:30px;background:#2c9733;color:white;border-radius:9px;font-size:17px}.private-label{display:flex;align-items:center;gap:8px;color:#69776d;font-size:12px;font-weight:700}.private-label span{width:7px;height:7px;border-radius:50%;background:#40a54a}.intro{padding:55px 0 30px}.eyebrow{font-size:10px;letter-spacing:.17em;font-weight:850;color:#328d36;margin:0 0 13px}.intro h1{font-size:clamp(34px,6vw,55px);line-height:1.03;letter-spacing:-.055em;margin:0;max-width:680px}.intro-copy{color:#68766d;max-width:590px;line-height:1.7;margin:18px 0}.meta-row{display:flex;gap:28px;flex-wrap:wrap;font-size:12px;color:#68766d;margin-top:24px}.meta-row strong{color:#1e2b21;margin-left:4px}.draft-note{background:#fff8e8;border:1px solid #f0dfb4;border-radius:12px;padding:15px 18px;font-size:12px;line-height:1.65;color:#62542c;margin:0 0 20px}.document{background:white;border:1px solid #e3e9e2;border-radius:18px;padding:clamp(24px,5vw,56px);box-shadow:0 18px 60px #1b35140b;font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:1.75;color:#2c352e}.doc-heading{display:flex;justify-content:space-between;gap:10px;color:#829086;font:700 9px/1.4 Inter, sans-serif;letter-spacing:.12em;padding-bottom:14px;border-bottom:1px solid #e8ede7}.document h2{font:750 25px/1.25 Inter,sans-serif;letter-spacing:-.04em;color:#17241b;margin:24px 0 18px}.document p{margin:10px 0}.opening{margin-top:0!important}.parties{padding-left:22px}.parties li{padding-left:5px;margin:10px 0}.clause{margin:24px 0}.clause h3,.signature-block h3{font:800 13px/1.4 Inter,sans-serif;color:#233d29;margin:0 0 7px}.clause p{margin:7px 0}.inline-input,.line-input{font:inherit;color:inherit;background:#fbfcfa;border:0;border-bottom:1px solid #aab7aa;padding:2px 5px;min-width:145px;border-radius:2px}.inline-input.wide{min-width:min(330px,90%)}.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:42px;padding-top:22px;border-top:1px solid #e1e9df}.signature-block{min-width:0}.signature-block p{font-size:12px}.line-input{font-size:12px;min-width:140px;max-width:100%}.signature-display{height:66px;border-bottom:1px solid #aab7aa;display:flex;align-items:center}.signature-display img{max-height:62px;max-width:100%;object-fit:contain}.signature-display span{font:italic 12px Inter,sans-serif;color:#a0aaa1}.witness{margin-top:28px!important;font-size:11px;color:#68766d}.sign-panel{background:#fff;border:1px solid #e3e9e2;border-radius:18px;margin-top:18px;padding:clamp(22px,4vw,38px);box-shadow:0 14px 45px #1b35140a}.sign-panel h2{font-size:24px;letter-spacing:-.04em;margin:0}.sign-hint,.sign-footnote{font-size:12px;color:#748077;line-height:1.6}.field-label{display:block;font-size:12px;font-weight:750;margin:22px 0 7px}.name-field{width:100%;height:45px;border:1px solid #dfe7de;border-radius:10px;padding:0 13px;font:inherit;font-size:14px}.canvas-wrap{position:relative;border:1px dashed #b8c9b7;background:#fbfdfb;border-radius:12px;margin-top:14px;height:150px;overflow:hidden;touch-action:none}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.canvas-caption{position:absolute;bottom:9px;right:12px;color:#9aa59b;font-size:10px;pointer-events:none}.sign-actions{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:16px;margin-top:16px}.clear-button{border:0;background:none;color:#4f6353;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:12px}.consent{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#4d5d50;line-height:1.45}.consent input{accent-color:#318e35;margin-top:2px}.sign-button{grid-column:1/-1;justify-self:start;border:0;border-radius:999px;padding:13px 20px;color:white;background:#319638;font:750 13px Inter,sans-serif;cursor:pointer}.sign-button:disabled{opacity:.4;cursor:not-allowed}.sign-footnote{margin:14px 0 0}.nda-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:24px 4px;font-size:11px;color:#7a867d}.nda-footer a{font-weight:750;color:#3e7542}
-    @media(max-width:600px){.nda-shell{padding:0 15px 28px}.intro{padding-top:39px}.meta-row{gap:10px;flex-direction:column}.doc-heading{flex-direction:column}.signature-grid{grid-template-columns:1fr}.sign-actions{grid-template-columns:1fr}.clear-button{justify-self:start}.consent{grid-row:2}.sign-button{grid-column:1}.document{font-size:13px;padding:23px 20px}}
+    *[hidden]{display:none!important}.signer-picker{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:22px;font-size:11px}.signer-picker span{color:#778278;font-weight:700;margin-right:3px}.signer-picker a{padding:8px 11px;border:1px solid #dce7db;border-radius:999px;background:#fff;color:#315b35;font-weight:750}.signer-picker a:hover,.signer-picker a[aria-current="page"]{background:#e9f7e7;border-color:#a9d3a5}.signature-block.is-active-signer{padding:14px;border:1px solid #a8d7a4;border-radius:12px;background:#f7fcf6}.signer-form{margin-top:20px}
+    @media(max-width:600px){.nda-shell{padding:0 15px 28px}.intro{padding-top:39px}.meta-row{gap:10px;flex-direction:column}.doc-heading{flex-direction:column}.signature-grid{grid-template-columns:1fr}.sign-actions{grid-template-columns:1fr}.clear-button{justify-self:start}.consent{grid-row:2}.sign-button{grid-column:1}.document{font-size:13px;padding:23px 20px}.signer-picker{gap:6px}.signer-picker a{padding:7px 9px}}
     .signature-display img[hidden]{display:none!important}.preview-dialog{width:min(940px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid #dfe7de;border-radius:16px;background:#f4f7f3;color:#18231b;box-shadow:0 28px 90px #15221955}.preview-dialog::backdrop{background:#101b13aa;backdrop-filter:blur(3px)}.preview-toolbar,.preview-actions{position:sticky;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;background:#fff}.preview-toolbar{top:0;border-bottom:1px solid #e4eae3}.preview-actions{bottom:0;border-top:1px solid #e4eae3}.preview-document{max-width:800px;margin:20px auto;padding:0 20px}.preview-document .document{box-shadow:0 10px 35px #1734190d}.preview-document .inline-input,.preview-document .line-input{display:inline-block;min-width:50px;border:0;border-bottom:1px solid #899689;background:transparent;padding:0 2px}.preview-document .field-value:empty::after{content:'________________';color:#899689}.preview-dialog[open]{display:flex;flex-direction:column}.preview-document{flex:1;min-height:0;overflow:auto;width:100%}.preview-document .document{margin:0 auto}.preview-actions .sign-button{grid-column:auto;justify-self:auto;flex:0 0 auto}.final-panel{margin-top:16px;padding:22px 24px;border:1px solid #cfe5cd;border-radius:14px;background:#f1fbef}.final-panel h2{margin:0;font-size:20px;letter-spacing:-.03em}.final-panel p{font-size:13px;line-height:1.6;color:#59685c}.email-button{display:inline-flex;text-decoration:none;margin-top:5px}.final-panel[hidden]{display:none!important}
     @media(max-width:600px){.preview-toolbar,.preview-actions{padding:12px;gap:8px}.preview-actions{align-items:stretch;flex-direction:column-reverse}.preview-actions .sign-button{width:100%}}
     @media print{@page{size:A4;margin:16mm}body *{visibility:hidden!important}.preview-dialog,.preview-dialog *{visibility:visible!important}.preview-dialog{position:fixed;inset:0;width:auto;max-width:none;max-height:none;height:auto;overflow:visible;padding:0;border:0;border-radius:0;box-shadow:none;background:white}.preview-toolbar,.preview-actions{display:none!important}.preview-document{max-width:none;overflow:visible;margin:0;padding:0}.preview-document .document{padding:0;border:0;box-shadow:none;border-radius:0;font-size:11pt}.preview-document .document h2{font-size:20pt}.preview-document .clause,.preview-document .signature-grid{break-inside:avoid}.preview-document .field-value:empty::after{content:'________________';color:#111}.preview-document .signature-display img{display:block!important}.preview-document .inline-input,.preview-document .line-input{border:0;border-bottom:1px solid #555;background:transparent;padding:0;color:#111}}
   </style>
 
   <script>
+    const signerNames = {
+      ebinesh: 'EBINESH A',
+      bhuvaneshwari: 'BHUVANESHWARI K',
+      issac: 'Issac Surya',
+    } as const;
+    const aliases: Record<string, keyof typeof signerNames> = {
+      ebinesh: 'ebinesh',
+      bhuvaneshwari: 'bhuvaneshwari',
+      issac: 'issac',
+      'issac-surya': 'issac',
+      isaac: 'issac',
+      'isaac-surya': 'issac',
+    };
+    const requestedSigner = new URLSearchParams(window.location.search).get('signing')?.trim().toLowerCase() || '';
+    const signerRole = aliases[requestedSigner];
     const canvas = document.querySelector<HTMLCanvasElement>('#signature-pad')!;
     const context = canvas.getContext('2d')!;
     const clearButton = document.querySelector<HTMLButtonElement>('#clear-signature')!;
@@ -103,13 +127,40 @@ const agreementDate = '7 October 2026';
     const editAgreement = document.querySelector<HTMLButtonElement>('#edit-agreement')!;
     const confirmAndPrint = document.querySelector<HTMLButtonElement>('#confirm-and-print')!;
     const finalPanel = document.querySelector<HTMLElement>('#final-panel')!;
+    const signerForm = document.querySelector<HTMLElement>('#signer-form')!;
+    const signerHint = document.querySelector<HTMLElement>('#signer-hint')!;
+    const signerHeading = document.querySelector<HTMLElement>('#sign-title')!;
+    const emailCopy = document.querySelector<HTMLAnchorElement>('#email-copy')!;
     const originalTitle = document.title;
-    const image = document.querySelector<HTMLImageElement>('#signature-image')!;
-    const placeholder = document.querySelector<HTMLElement>('#signature-placeholder')!;
-    const signedDate = document.querySelector<HTMLElement>('#signed-date')!;
-    const printedName = document.querySelector<HTMLElement>('#printed-name')!;
     let drawing = false;
     let hasInk = false;
+
+    document.querySelectorAll<HTMLElement>('[data-address-for]').forEach((field) => {
+      const isCurrentSigner = field.dataset.addressFor === signerRole;
+      field.hidden = !isCurrentSigner;
+    });
+    document.querySelectorAll<HTMLElement>('[data-address-pending]').forEach((field) => {
+      field.hidden = field.dataset.addressPending === signerRole;
+    });
+    document.querySelectorAll<HTMLElement>('[data-signature-block]').forEach((block) => {
+      block.classList.toggle('is-active-signer', block.dataset.signatureBlock === signerRole);
+    });
+    document.querySelectorAll<HTMLAnchorElement>('.signer-picker a').forEach((link) => {
+      const role = new URL(link.href).searchParams.get('signing');
+      if (role === signerRole) link.setAttribute('aria-current', 'page');
+    });
+    if (signerRole) {
+      signerForm.hidden = false;
+      nameInput.value = signerNames[signerRole];
+      signerHeading.textContent = `Sign as ${signerNames[signerRole]}`;
+      signerHint.textContent = `Enter your address in the agreement above, draw your signature, then review the preview before confirming.`;
+      document.querySelectorAll<HTMLElement>('[data-address-for]').forEach((field) => {
+        if (field.dataset.addressFor === signerRole) field.scrollIntoView({ block: 'nearest' });
+      });
+    } else if (requestedSigner) {
+      signerHint.textContent = 'That signing link is not recognized. Choose your name from the signer links above.';
+      signerHeading.textContent = 'Choose your signing link';
+    }
 
     function resizeCanvas() {
       const rect = canvas.getBoundingClientRect();
@@ -125,17 +176,36 @@ const agreementDate = '7 October 2026';
       if (old) { const img = new Image(); img.onload = () => context.drawImage(img, 0, 0, rect.width, rect.height); img.src = old; }
     }
     resizeCanvas();
+    if (signerRole) requestAnimationFrame(resizeCanvas);
     window.addEventListener('resize', resizeCanvas);
     function point(event: PointerEvent) { const rect = canvas.getBoundingClientRect(); return { x: event.clientX - rect.left, y: event.clientY - rect.top }; }
-    canvas.addEventListener('pointerdown', (event) => { drawing = true; canvas.setPointerCapture(event.pointerId); const p = point(event); context.beginPath(); context.moveTo(p.x, p.y); context.lineTo(p.x + 0.1, p.y + 0.1); context.stroke(); hasInk = true; signButton.disabled = !(hasInk && consent.checked && nameInput.value.trim()); });
+    canvas.addEventListener('pointerdown', (event) => { drawing = true; canvas.setPointerCapture(event.pointerId); const p = point(event); context.beginPath(); context.moveTo(p.x, p.y); context.lineTo(p.x + 0.1, p.y + 0.1); context.stroke(); hasInk = true; updateButton(); });
     canvas.addEventListener('pointermove', (event) => { if (!drawing) return; const p = point(event); context.lineTo(p.x, p.y); context.stroke(); });
     const stopDrawing = () => { drawing = false; };
     canvas.addEventListener('pointerup', stopDrawing);
     canvas.addEventListener('pointercancel', stopDrawing);
-    clearButton.addEventListener('click', () => { context.clearRect(0, 0, canvas.width, canvas.height); hasInk = false; signButton.disabled = true; image.hidden = true; placeholder.hidden = false; signedDate.textContent = 'Not signed'; });
-    function updateButton() { signButton.disabled = !(hasInk && consent.checked && nameInput.value.trim().length > 0); }
+    const signerAddress = signerRole
+      ? document.querySelector<HTMLInputElement>(`[data-address-for="${signerRole}"] input`)
+      : null;
+    function updateButton() {
+      signButton.disabled = !(signerRole && hasInk && consent.checked && nameInput.value.trim().length > 0 && signerAddress?.value.trim());
+    }
+    clearButton.addEventListener('click', () => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      hasInk = false;
+      signButton.disabled = true;
+      if (signerRole) {
+        const image = agreement.querySelector<HTMLImageElement>(`[data-signature-image="${signerRole}"]`)!;
+        const placeholder = agreement.querySelector<HTMLElement>(`[data-signature-placeholder="${signerRole}"]`)!;
+        const signedDate = agreement.querySelector<HTMLElement>(`[data-signed-date="${signerRole}"]`)!;
+        image.hidden = true;
+        placeholder.hidden = false;
+        signedDate.textContent = 'Not signed';
+      }
+    });
     consent.addEventListener('change', updateButton);
     nameInput.addEventListener('input', updateButton);
+    signerAddress?.addEventListener('input', updateButton);
     function createPreview() {
       const clone = agreement.cloneNode(true) as HTMLElement;
       clone.removeAttribute('id');
@@ -149,7 +219,11 @@ const agreementDate = '7 October 2026';
       previewDocument.replaceChildren(clone);
     }
     signButton.addEventListener('click', () => {
-      if (!hasInk || !consent.checked || !nameInput.value.trim()) return;
+      if (!signerRole || !hasInk || !consent.checked || !nameInput.value.trim() || !signerAddress?.value.trim()) return;
+      const image = agreement.querySelector<HTMLImageElement>(`[data-signature-image="${signerRole}"]`)!;
+      const placeholder = agreement.querySelector<HTMLElement>(`[data-signature-placeholder="${signerRole}"]`)!;
+      const signedDate = agreement.querySelector<HTMLElement>(`[data-signed-date="${signerRole}"]`)!;
+      const printedName = agreement.querySelector<HTMLElement>(`[data-signed-by="${signerRole}"]`)!;
       image.src = canvas.toDataURL('image/png');
       image.hidden = false;
       placeholder.hidden = true;
@@ -160,7 +234,14 @@ const agreementDate = '7 October 2026';
     });
     closePreview.addEventListener('click', () => previewDialog.close());
     editAgreement.addEventListener('click', () => previewDialog.close());
-    confirmAndPrint.addEventListener('click', () => { finalPanel.hidden = false; document.title = 'Signed NDA - Issac Surya - Whatscart'; window.print(); });
+    confirmAndPrint.addEventListener('click', () => {
+      if (!signerRole) return;
+      finalPanel.hidden = false;
+      const signerName = signerNames[signerRole];
+      document.title = `Signed NDA - ${signerName} - Whatscart`;
+      emailCopy.href = `mailto:team@whatscart.in?subject=${encodeURIComponent(`Signed Whatscart NDA - ${signerName}`)}&body=${encodeURIComponent(`Hello Whatscart team,\n\nPlease find my signed NDA attached.\n\nRegards,\n${signerName}`)}`;
+      window.print();
+    });
     window.addEventListener('afterprint', () => {
       document.title = originalTitle;
       if (previewDialog.open) previewDialog.close();
