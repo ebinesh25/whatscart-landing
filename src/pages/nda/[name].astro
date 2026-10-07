@@ -9,9 +9,7 @@ export function getStaticPaths() {
 
 const { name } = Astro.params;
 const invitee = name === 'issac-surya' ? 'Issac Surya' : 'Invitee';
-const today = new Date().toLocaleDateString('en-IN', {
-  day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata',
-});
+const agreementDate = '7 October 2026';
 ---
 
 <Layout>
@@ -27,20 +25,20 @@ const today = new Date().toLocaleDateString('en-IN', {
       <p class="eyebrow">FOUNDER ONBOARDING · CONFIDENTIAL</p>
       <h1>Confidentiality<br />&amp; Non-Disclosure Agreement</h1>
       <p class="intro-copy">A clear agreement for sharing Whatscart’s business, product, customer and operational information during the initial collaboration.</p>
-      <div class="meta-row"><span>Prepared for <strong>{invitee}</strong></span><span>Proposed date <strong>{today}</strong></span></div>
+      <div class="meta-row"><span>Prepared for <strong>{invitee}</strong></span><span>Agreement date <strong>{agreementDate}</strong></span></div>
     </section>
 
-    <div class="draft-note"><strong>Before signing:</strong> Confirm the exact legal name and address of the business/entity operating Whatscart, the effective date, and the parties’ details. This draft is not a substitute for advice from an Indian lawyer.</div>
+    <div class="draft-note"><strong>Before signing:</strong> Fill in each person’s full address. EBINESH A and BHUVANESHWARI K must personally sign their own lines before sending this agreement to {invitee}; their signature lines and signing dates are intentionally blank. This draft is not a substitute for advice from an Indian lawyer.</div>
 
     <article class="document" id="agreement">
       <div class="doc-heading"><span class="doc-kicker">Whatscart · India</span><span class="doc-number">CONFIDENTIALITY AGREEMENT</span></div>
       <h2>Mutual Non-Disclosure Agreement</h2>
-      <p class="opening">This Agreement is made on <input class="inline-input" aria-label="Effective date" value={today} /> (the “Effective Date”) by and between:</p>
+      <p class="opening">This Agreement is dated <strong>{agreementDate}</strong> (the “Effective Date”) and is made by and between:</p>
       <ol class="parties">
-        <li><strong>Whatscart</strong>, the business/venture operated by co-founders <strong>EBINESH A</strong> and <strong>BHUVANESHWARI K</strong>, acting through its lawful contracting entity (legal name and registered/principal address to be completed before signing), referred to as “Whatscart”; and</li>
+        <li><strong>EBINESH A</strong>, residing at <input class="inline-input wide" aria-label="EBINESH A address" placeholder="Full address" />, and <strong>BHUVANESHWARI K</strong>, residing at <input class="inline-input wide" aria-label="BHUVANESHWARI K address" placeholder="Full address" /> (together, the “Founders”), each signing in their individual capacity in connection with the Whatscart venture; and</li>
         <li><strong>{invitee}</strong>, whose address is <input class="inline-input wide" aria-label="Issac Surya address" placeholder="Full residential address" />, referred to as the “Recipient”.</li>
       </ol>
-      <p>Whatscart and the Recipient are each a “Party” and together the “Parties”. In this Agreement, the Party disclosing information is the “Disclosing Party” and the Party receiving it is the “Receiving Party”.</p>
+      <p>Each Founder and the Recipient is a “Party”, and together they are the “Parties”. In this Agreement, the Party disclosing information is the “Disclosing Party” and the Party receiving it is the “Receiving Party”. “Whatscart” refers to the name used for the venture; the contracting parties are the named individuals, not a separate registered entity.</p>
 
       <section class="clause"><h3>1. Purpose and proposed responsibilities</h3><p>The Parties wish to discuss and/or work together on the marketing, launch and early operations of the Whatscart app and business (the “Purpose”). The Recipient may assist with marketing and promotion, initial setup activities, supporting Udyam registration, gathering client requirements and feedback, and related tasks agreed with the founders. This description does not itself appoint the Recipient as a director, partner, employee, agent or authorised representative.</p></section>
       <section class="clause"><h3>2. Confidential Information</h3><p>“Confidential Information” means non-public information disclosed by or for a Party in any form, including product plans, software, source code, designs, credentials, pricing, financial information, marketing plans, business methods, client/prospect requirements, customer and supplier details, and discussions or documents about the Purpose. It includes information that a reasonable person would understand to be confidential from its nature or the circumstances of disclosure.</p><p>It does not include information the Receiving Party can show: (a) is public through no breach of this Agreement; (b) was lawfully known without a confidentiality duty before disclosure; (c) was independently developed without use of the Confidential Information; or (d) was lawfully received from a third party without a confidentiality duty.</p></section>
@@ -54,7 +52,8 @@ const today = new Date().toLocaleDateString('en-IN', {
       <section class="clause"><h3>10. General</h3><p>This Agreement is the complete agreement about confidentiality for the Purpose and may be changed only in writing signed by both Parties. If a provision is unenforceable, the remaining provisions continue to the extent permitted by law. This Agreement is governed by the laws of India. Courts having jurisdiction at <input class="inline-input" aria-label="City and state for jurisdiction" placeholder="City, State" /> will have jurisdiction, subject to applicable law.</p><p>Signatures may be exchanged electronically or in counterparts, subject to applicable law. Each signatory confirms they are authorised and have had an opportunity to read and seek advice on this Agreement.</p></section>
 
       <div class="signature-grid">
-        <div class="signature-block"><h3>For Whatscart</h3><p>Legal entity: <input class="line-input" aria-label="Whatscart legal entity name" placeholder="Complete before signing" /></p><p>By: EBINESH A / BHUVANESHWARI K</p><p>Signature: __________________________</p><p>Date: ______________________________</p></div>
+        <div class="signature-block"><h3>Founder / Individual Party</h3><p>Name: <strong>EBINESH A</strong></p><p>Signature: __________________________</p><p>Date signed: ________________________</p></div>
+        <div class="signature-block"><h3>Founder / Individual Party</h3><p>Name: <strong>BHUVANESHWARI K</strong></p><p>Signature: __________________________</p><p>Date signed: ________________________</p></div>
         <div class="signature-block recipient-signature"><h3>Recipient</h3><p>Name: <strong>{invitee}</strong></p><div class="signature-display"><img id="signature-image" alt="Recipient signature" hidden /><span id="signature-placeholder">Draw signature below</span></div><p>Signed electronically by <strong id="printed-name">{invitee}</strong></p><p>Date: <strong id="signed-date">Not signed</strong></p></div>
       </div>
       <p class="witness">Witness (optional): ______________________________ &nbsp; Name: ______________________________</p>
