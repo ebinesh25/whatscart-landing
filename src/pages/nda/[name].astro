@@ -30,7 +30,7 @@ const agreementDate = '7 October 2026';
         <span>Signer links</span>
         <a href="?signing=ebinesh">EBINESH A</a>
         <a href="?signing=bhuvaneshwari">BHUVANESHWARI K</a>
-        <a href="?signing=issac">{invitee}</a>
+        <a href="?signing=isaac">{invitee}</a>
       </nav>
     </section>
 
@@ -147,7 +147,7 @@ const agreementDate = '7 October 2026';
     });
     document.querySelectorAll<HTMLAnchorElement>('.signer-picker a').forEach((link) => {
       const role = new URL(link.href).searchParams.get('signing');
-      if (role === signerRole) link.setAttribute('aria-current', 'page');
+      if (role && aliases[role.toLowerCase()] === signerRole) link.setAttribute('aria-current', 'page');
     });
     if (signerRole) {
       signerForm.hidden = false;
